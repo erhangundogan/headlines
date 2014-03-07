@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h2 BBC
+  - if (bbcHeadlines && bbcHeadlines.length > 0)
+    ul.headlines
+      each bbcHeadline in bbcHeadlines
+        li
+          a.title(href=bbcHeadline.link)=bbcHeadline.title
+          .text=bbcHeadline.description
+  hr
+
+  h2 SKY
+  - if (skyHeadlines && skyHeadlines.length > 0)
+    ul.headlines
+      each skyHeadline in skyHeadlines
+        li
+          a.title(href=skyHeadline.link)=skyHeadline.title
+          .text=skyHeadline.description
